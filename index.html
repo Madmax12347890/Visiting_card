@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Manu Markande | Social Scale Co.</title>
+
+<style>
+/* =====================================================
+   RESET
+===================================================== */
+
+.jd-card-page,
+.jd-card-page *,
+.jd-card-page *::before,
+.jd-card-page *::after {
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   MAIN PAGE
+===================================================== */
+
+.jd-card-page {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0;
+    background: #f1f2f4;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #111;
+    overflow: visible;
+}
+
+
+/* =====================================================
+   RESPONSIVE BANNER
+===================================================== */
+
+.jd-banner {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    line-height: 0;
+}
+
+.jd-banner img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+
+/* =====================================================
+   PROFILE PHOTO
+===================================================== */
+
+.jd-profile-photo {
+    position: absolute;
+
+    left: 50%;
+    bottom: -52px;
+
+    transform: translateX(-50%);
+
+    width: 105px;
+    height: 105px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    padding: 4px;
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.35);
+
+    z-index: 10;
+}
+
+.jd-profile-photo img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+
+
+/* =====================================================
+   PROFILE DETAILS
+===================================================== */
+
+.jd-profile-details {
+    text-align: center;
+
+    padding:
+        63px
+        20px
+        8px;
+}
+
+.jd-profile-name {
+    margin: 0;
+
+    font-size: 21px;
+    line-height: 1.3;
+
+    font-weight: 700;
+}
+
+.jd-profile-tagline {
+    margin-top: 4px;
+
+    font-size: 13px;
+    line-height: 1.4;
+
+    color: #59677a;
+}
+
+
+/* =====================================================
+   SAVE CONTACT
+===================================================== */
+
+.jd-save-contact {
+    width: calc(100% - 40px);
+
+    height: 52px;
+
+    margin:
+        0 auto
+        20px;
+
+    border: 1px solid #d5d5d5;
+
+    border-radius: 28px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 2px 3px rgba(0, 0, 0, 0.16);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    color: #111;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    outline: none;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.jd-save-contact svg {
+    width: 15px;
+    height: 15px;
+}
+
+.jd-save-contact:active {
+    transform: scale(0.99);
+}
+
+
+/* =====================================================
+   SOCIAL GRID
+===================================================== */
+
+.jd-social-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+    padding:
+        0
+        20px
+        14px;
+}
+
+
+/* =====================================================
+   SOCIAL BUTTON
+===================================================== */
+
+.jd-social-button {
+    height: 58px;
+
+    background: #ffffff;
+
+    border-radius: 5px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    color: #333;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.jd-social-button svg {
+    width: 20px;
+    height: 20px;
+
+    margin-bottom: 5px;
+}
+
+.jd-social-button span {
+    font-size: 9px;
+
+    color: #59677a;
+}
+
+
+/* =====================================================
+   SOCIAL COLORS
+===================================================== */
+
+.jd-instagram {
+    color: #e1306c;
+}
+
+.jd-facebook {
+    color: #1877f2;
+}
+
+.jd-youtube {
+    color: #ff0000;
+}
+
+.jd-linkedin {
+    color: #0077b5;
+}
+
+.jd-website {
+    color: #1728ff;
+}
+
+.jd-spotify {
+    color: #1db954;
+}
+
+.jd-pinterest {
+    color: #bd081c;
+}
+
+.jd-x {
+    color: #000000;
+}
+
+
+/* =====================================================
+   INFORMATION AREA
+===================================================== */
+
+.jd-information {
+    padding:
+        0
+        20px
+        10px;
+}
+
+
+/* =====================================================
+   INFORMATION CARD
+===================================================== */
+
+.jd-info-card {
+    width: 100%;
+
+    min-height: 61px;
+
+    margin-bottom: 10px;
+
+    padding:
+        9px
+        14px;
+
+    background: #ffffff;
+
+    border-radius: 5px;
+
+    display: flex;
+
+    align-items: center;
+
+    text-decoration: none;
+
+    color: #111;
+}
+
+
+/* =====================================================
+   INFORMATION ICON
+===================================================== */
+
+.jd-info-icon {
+    width: 38px;
+    height: 38px;
+
+    min-width: 38px;
+
+    margin-right: 12px;
+
+    border-radius: 50%;
+
+    background: #edf5ff;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.jd-info-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* =====================================================
+   INFORMATION CONTENT
+===================================================== */
+
+.jd-info-content {
+    min-width: 0;
+}
+
+.jd-info-label {
+    margin-bottom: 2px;
+
+    font-size: 11px;
+
+    color: #59677a;
+}
+
+.jd-info-value {
+    font-size: 13px;
+
+    line-height: 1.35;
+
+    font-weight: 500;
+
+    color: #111;
+
+    word-break: break-word;
+}
+
+
+/* =====================================================
+   ICON COLORS
+===================================================== */
+
+.jd-email-icon {
+    color: #ff0000;
+}
+
+.jd-location-icon {
+    color: #e60000;
+}
+
+.jd-phone-icon {
+    color: #69717a;
+}
+
+.jd-whatsapp-icon {
+    color: #00c853;
+    background: #eafff1;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .jd-card-page {
+        width: 100%;
+    }
+
+    .jd-banner {
+        width: 100%;
+        height: auto;
+    }
+
+    .jd-banner img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .jd-banner {
+        width: 100%;
+        height: auto;
+    }
+
+    .jd-banner img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .jd-profile-photo {
+        width: 95px;
+        height: 95px;
+
+        bottom: -47px;
+    }
+
+    .jd-profile-details {
+        padding-top: 58px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .jd-profile-name {
+        font-size: 20px;
+    }
+
+    .jd-profile-tagline {
+        font-size: 12px;
+    }
+
+    .jd-save-contact {
+        width: calc(100% - 40px);
+        height: 50px;
+
+        margin-bottom: 18px;
+    }
+
+    .jd-social-grid {
+        grid-template-columns: repeat(4, 1fr);
+
+        gap: 9px;
+
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 13px;
+    }
+
+    .jd-social-button {
+        height: 56px;
+    }
+
+    .jd-social-button svg {
+        width: 19px;
+        height: 19px;
+        margin-bottom: 4px;
+    }
+
+    .jd-social-button span {
+        font-size: 8px;
+    }
+
+    .jd-information {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 8px;
+    }
+
+    .jd-info-card {
+        min-height: 58px;
+        margin-bottom: 9px;
+        padding: 8px 12px;
+    }
+
+    .jd-info-icon {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        margin-right: 10px;
+    }
+
+    .jd-info-icon svg {
+        width: 19px;
+        height: 19px;
+    }
+
+    .jd-info-label {
+        font-size: 10px;
+    }
+
+    .jd-info-value {
+        font-size: 12px;
+        line-height: 1.3;
+    }
+}
+
+
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .jd-profile-photo {
+        width: 90px;
+        height: 90px;
+
+        bottom: -45px;
+    }
+
+    .jd-profile-details {
+        padding-top: 55px;
+    }
+
+    .jd-profile-name {
+        font-size: 19px;
+    }
+
+    .jd-social-grid {
+        gap: 7px;
+    }
+
+    .jd-social-button {
+        height: 54px;
+    }
+
+    .jd-social-button svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .jd-social-button span {
+        font-size: 8px;
+    }
+
+    .jd-info-card {
+        min-height: 56px;
+    }
+
+    .jd-info-icon {
+        width: 34px;
+        height: 34px;
+        min-width: 34px;
+    }
+
+    .jd-info-value {
+        font-size: 12px;
+    }
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media (max-width: 330px) {
+
+    .jd-profile-photo {
+        width: 84px;
+        height: 84px;
+
+        bottom: -42px;
+    }
+
+    .jd-profile-details {
+        padding-top: 52px;
+    }
+
+    .jd-social-grid {
+        padding-left: 12px;
+        padding-right: 12px;
+        gap: 6px;
+    }
+
+    .jd-information {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .jd-save-contact {
+        width: calc(100% - 24px);
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="jd-card-page">
+
+
+<!-- =================================================
+     BANNER + PROFILE PHOTO
+================================================= -->
+
+<div class="jd-banner">
+
+    <img
+        src="C:\Users\Admin\Desktop\Africa_avenue\banner.png"
+        alt="Social Scale Co.">
+
+    <div class="jd-profile-photo">
+
+        <img
+            src="C:\Users\Admin\Desktop\Africa_avenue\new_logo.png"
+            alt="Manu Markande">
+
+    </div>
+
+</div>
+
+
+<!-- =================================================
+     PROFILE INFORMATION
+================================================= -->
+
+<div class="jd-profile-details">
+
+    <h1 class="jd-profile-name">
+        Manu Markande
+    </h1>
+
+    <div class="jd-profile-tagline">
+        Social_Scale_Co.
+    </div>
+
+</div>
+
+
+<!-- =================================================
+     SAVE CONTACT
+================================================= -->
+
+<button
+    type="button"
+    class="jd-save-contact"
+    onclick="jdSaveContact()">
+
+    <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2">
+
+        <rect
+            x="3"
+            y="5"
+            width="18"
+            height="14"
+            rx="2">
+        </rect>
+
+        <circle
+            cx="8"
+            cy="10"
+            r="1.5">
+        </circle>
+
+        <path d="M12 10h6"></path>
+        <path d="M12 14h6"></path>
+
+    </svg>
+
+    Save Contact
+
+</button>
+
+
+<!-- =================================================
+     SOCIAL MEDIA
+===================================================== -->
+
+<div class="jd-social-grid">
+
+
+<!-- INSTAGRAM -->
+
+<a
+    href="https://instagram.com/"
+    target="_blank"
+    rel="noopener"
+    class="jd-social-button">
+
+    <svg
+        class="jd-instagram"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2">
+
+        <rect
+            x="3"
+            y="3"
+            width="18"
+            height="18"
+            rx="5">
+        </rect>
+
+        <circle
+            cx="12"
+            cy="12"
+            r="4">
+        </circle>
+
+        <circle
+            cx="17.5"
+            cy="6.5"
+            r="1"
+            fill="currentColor"
+            stroke="none">
+        </circle>
+
+    </svg>
+
+    <span>Instagram</span>
+
+</a>
+
+
+<!-- FACEBOOK -->
+
+<a
+    href="https://facebook.com/"
+    target="_blank"
+    rel="noopener"
+    class="jd-social-button">
+
+    <svg
+        class="jd-facebook"
+        viewBox="0 0 24 24"
+        fill="currentColor">
+
+        <circle cx="12" cy="12" r="10"></circle>
+
+        <path
+            d="M13.4 20v-7h2.35l.35-2.7H13.4V8.58c0-.78.22-1.3 1.36-1.3h1.45V4.87c-.25-.03-1.1-.1-2.1-.1-2.08 0-3.5 1.27-3.5 3.61v1.92H8.25V13h2.36v7h2.79z"
+            fill="#fff">
+        </path>
+
+    </svg>
+
+    <span>Facebook</span>
+
+</a>
+
+
+<!-- YOUTUBE -->
+
+<a
+    href="https://youtube.com/"
+    target="_blank"
+    rel="noopener"
+    class="jd-social-button">
+
+    <svg
+        class="jd-youtube"
+        viewBox="0 0 24 24"
+        fill="currentColor">
+
+        <path
+            d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8z">
+        </path>
+
+        <path
+            d="M9.6 15.5v-7l6 3.5-6 3.5z"
+            fill="#fff">
+        </path>
+
+    </svg>
+
+    <span>YouTube</span>
+
+</a>
+
+
+<!-- LINKEDIN -->
+
+<a
+    href="https://linkedin.com/"
+    target="_blank"
+    rel="noopener"
+    class="jd-social-button">
+
+    <svg
+        class="jd-linkedin"
+        viewBox="0 0 24 24"
+        fill="currentColor">
+
+        <rect
+            x="3"
+            y="3"
+            width="18"
+            height="18"
+            rx="2">
+        </rect>
+
+        <circle
+            cx="8"
+            cy="8"
+            r="1.2"
+            fill="#fff">
+        </circle>
+
+        <path
+            d="M7 10h2v7H7zM11 10h2v1c.5-.8 1.3-1.3 2.5-1.3 2.2 0 3.5 1.3 3.5 4v4h-2v-3.6c0-1.4-.5-2.2-1.5-2.2-1.1 0-1.5.8-1.5 2.2V17h-2z"
+            fill="#fff">
+        </path>
+
+    </svg>
+
+    <span>LinkedIn</span>
+
+</a>
+
+
+<!-- WEBSITE -->
+
+<a
+    href="https://www.iimswiss.com/"
+    target="_blank"
+    rel="noopener"
+    class="jd-social-button">
+
+    <svg
+        class="jd-website"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2">
+
+        <circle cx="12" cy="12" r="9"></circle>
+
+        <path d="M3 12h18"></path>
+
+        <path d="M12 3c2.5 2.5 3.8 5.5 3.8 9s-1.3 6.5-3.8 9"></path>
+
+        <path d="M12 3c-2.5 2.5-3.8 5.5-3.8 9s1.3 6.5 3.8 9"></path>
+
+    </svg>
+
+    <span>Website</span>
+
+</a>
+
+
+<!-- SPOTIFY -->
+
+<a
+    href="https://open.spotify.com/"
+    target="_blank"
+    rel="noopener"
+    class="jd-social-button">
+
+    <svg
+        class="jd-spotify"
+        viewBox="0 0 24 24"
+        fill="currentColor">
+
+        <circle cx="12" cy="12" r="10"></circle>
+
+        <path
+            d="M7 9.5c3.5-1 7.4-.7 10.1.8"
+            fill="none"
+            stroke="#fff"
+            stroke-width="1.5"
+            stroke-linecap="round">
+        </path>
+
+        <path
+            d="M7.5 12.2c3-.8 6.4-.5 8.8.7"
+            fill="none"
+            stroke="#fff"
+            stroke-width="1.5"
+            stroke-linecap="round">
+        </path>
+
+        <path
+            d="M8.2 14.8c2.4-.5 5-.3 7 .6"
+            fill="none"
+            stroke="#fff"
+            stroke-width="1.5"
+            stroke-linecap="round">
+        </path>
+
+    </svg>
+
+    <span>Spotify</span>
+
+</a>
+
+
+<!-- PINTEREST -->
+
+<a
+    href="https://pinterest.com/"
+    target="_blank"
+    rel="noopener"
+    class="jd-social-button">
+
+    <svg
+        class="jd-pinterest"
+        viewBox="0 0 24 24"
+        fill="currentColor">
+
+        <circle cx="12" cy="12" r="10"></circle>
+
+        <text
+            x="12"
+            y="17"
+            text-anchor="middle"
+            fill="#fff"
+            font-size="13"
+            font-weight="bold">
+            P
+        </text>
+
+    </svg>
+
+    <span>Pinterest</span>
+
+</a>
+
+
+<!-- X -->
+
+<a
+    href="https://x.com/"
+    target="_blank"
+    rel="noopener"
+    class="jd-social-button">
+
+    <svg
+        class="jd-x"
+        viewBox="0 0 24 24"
+        fill="currentColor">
+
+        <path
+            d="M18.9 2H22l-6.8 7.8L23.2 22h-6.2l-4.9-6.4L6.5 22H3.4l7.2-8.3L2.9 2h6.3l4.4 5.8L18.9 2zM17.8 19.8h1.7L8.3 4.1H6.5l11.3 15.7z">
+        </path>
+
+    </svg>
+
+    <span>X</span>
+
+</a>
+
+</div>
+
+
+<!-- =================================================
+     CONTACT INFORMATION
+===================================================== -->
+
+<div class="jd-information">
+
+
+<!-- EMAIL -->
+
+<a
+    href="mailto:manumarkande80@gmail.com"
+    class="jd-info-card">
+
+    <div class="jd-info-icon jd-email-icon">
+
+        <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2">
+
+            <rect
+                x="3"
+                y="5"
+                width="18"
+                height="14"
+                rx="2">
+            </rect>
+
+            <path d="M3 7l9 6 9-6"></path>
+
+        </svg>
+
+    </div>
+
+    <div class="jd-info-content">
+
+        <div class="jd-info-label">
+            Email
+        </div>
+
+        <div class="jd-info-value">
+            manumarkande80@gmail.com
+        </div>
+
+    </div>
+
+</a>
+
+
+<!-- LOCATION -->
+
+<a
+    href="https://www.google.com/maps/search/?api=1&query=222%20Kailash%20Hills%20New%20Delhi%20110065"
+    target="_blank"
+    rel="noopener"
+    class="jd-info-card">
+
+    <div class="jd-info-icon jd-location-icon">
+
+        <svg
+            viewBox="0 0 24 24"
+            fill="currentColor">
+
+            <path
+                d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z">
+            </path>
+
+        </svg>
+
+    </div>
+
+    <div class="jd-info-content">
+
+        <div class="jd-info-label">
+            Location
+        </div>
+
+        <div class="jd-info-value">
+            222, Kailash Hills, New Delhi - 110 065
+        </div>
+
+    </div>
+
+</a>
+
+
+<!-- PHONE -->
+
+<a
+    href="tel:+918766296089"
+    class="jd-info-card">
+
+    <div class="jd-info-icon jd-phone-icon">
+
+        <svg
+            viewBox="0 0 24 24"
+            fill="currentColor">
+
+            <path
+                d="M6.6 2.8l3.1-.7c.7-.2 1.4.2 1.7.8l1.4 3.3c.3.6.1 1.3-.4 1.7l-1.7 1.4a15.5 15.5 0 0 0 4.1 4.1l1.4-1.7c.4-.5 1.1-.7 1.7-.4l3.3 1.4c.7.3 1 .9.8 1.7l-.7 3.1c-.2.8-.9 1.4-1.7 1.4C11.4 19 5 12.6 5 4.5c0-.8.6-1.5 1.4-1.7z">
+            </path>
+
+        </svg>
+
+    </div>
+
+    <div class="jd-info-content">
+
+        <div class="jd-info-label">
+            Contact
+        </div>
+
+        <div class="jd-info-value">
+            +91 876 629 6089
+        </div>
+
+    </div>
+
+</a>
+
+
+<!-- WHATSAPP -->
+
+<a
+    href="https://wa.me/919711490717"
+    target="_blank"
+    rel="noopener"
+    class="jd-info-card">
+
+    <div class="jd-info-icon jd-whatsapp-icon">
+
+        <svg
+            viewBox="0 0 24 24"
+            fill="currentColor">
+
+            <path
+                d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20z">
+            </path>
+
+        </svg>
+
+    </div>
+
+    <div class="jd-info-content">
+
+        <div class="jd-info-label">
+            WhatsApp
+        </div>
+
+        <div class="jd-info-value">
+            +91 971 149 0717
+        </div>
+
+    </div>
+
+</a>
+
+
+<!-- ALTERNATE PHONE -->
+
+<a
+    href="tel:+919310807894"
+    class="jd-info-card">
+
+    <div class="jd-info-icon jd-phone-icon">
+
+        <svg
+            viewBox="0 0 24 24"
+            fill="currentColor">
+
+            <path
+                d="M6.6 2.8l3.1-.7c.7-.2 1.4.2 1.7.8l1.4 3.3c.3.6.1 1.3-.4 1.7l-1.7 1.4a15.5 15.5 0 0 0 4.1 4.1l1.4-1.7c.4-.5 1.1-.7 1.7-.4l3.3 1.4c.7.3 1 .9.8 1.7l-.7 3.1c-.2.8-.9 1.4-1.7 1.4C11.4 19 5 12.6 5 4.5c0-.8.6-1.5 1.4-1.7z">
+            </path>
+
+        </svg>
+
+    </div>
+
+    <div class="jd-info-content">
+
+        <div class="jd-info-label">
+            Alternate Phone
+        </div>
+
+        <div class="jd-info-value">
+            +91 931 080 7894
+        </div>
+
+    </div>
+
+</a>
+
+
+</div>
+
+</div>
+
+
+<!-- =================================================
+     SAVE CONTACT JAVASCRIPT
+===================================================== -->
+
+<script>
+
+function jdSaveContact() {
+
+    const vCardData =
+`BEGIN:VCARD
+VERSION:3.0
+FN:Manu Markande
+N:Markande;Manu;;;
+ORG:Social Scale Co.
+EMAIL;TYPE=INTERNET:manumarkande80@gmail.com
+TEL;TYPE=CELL:+918766296089
+TEL;TYPE=CELL:+919310807894
+TEL;TYPE=WORK:+919711490717
+ADR;TYPE=HOME:;;222 Kailash Hills;New Delhi;;110065;India
+END:VCARD`;
+
+    const blob = new Blob(
+        [vCardData],
+        {
+            type: "text/vcard;charset=utf-8"
+        }
+    );
+
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+
+    link.href = url;
+
+    link.download = "Manu-Markande.vcf";
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+
+    setTimeout(function() {
+        URL.revokeObjectURL(url);
+    }, 1000);
+
+}
+
+</script>
+
+</body>
+</html>
