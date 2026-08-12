@@ -50,11 +50,6 @@
     line-height: 0;
 }
 
-/* IMPORTANT:
-   Keep the original image proportions.
-   This prevents stretching on PC and mobile.
-*/
-
 .jd-banner > img {
     display: block !important;
 
@@ -65,6 +60,7 @@
     min-height: 0 !important;
 
     object-fit: contain !important;
+    object-position: center center !important;
 
     margin: 0 !important;
     padding: 0 !important;
@@ -72,58 +68,71 @@
 
 
 /* =====================================================
-   PROFILE PHOTO
+   PROFILE PHOTO / LOGO
 ===================================================== */
+
+/*
+   IMPORTANT:
+   The logo container is deliberately NOT using
+   overflow:hidden. This prevents the actual logo
+   artwork from being clipped.
+*/
 
 .jd-profile-photo {
     position: absolute;
 
     left: 50%;
-    bottom: -52px;
+    bottom: -60px;
 
     transform: translateX(-50%);
 
-    width: 105px;
-    height: 105px;
+    width: 120px;
+    height: 120px;
 
     border-radius: 50%;
 
     background: #ffffff;
 
-    padding: 3px;
+    padding: 2px;
 
     box-shadow:
-        0 2px 6px rgba(0, 0, 0, 0.35);
+        0 3px 8px rgba(0, 0, 0, 0.30);
 
     z-index: 20;
 
-    /* Prevent logo from being cropped */
-    overflow: hidden;
+    overflow: visible !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
-/* IMPORTANT:
-   CONTAIN instead of COVER.
-   This makes the complete logo visible.
+/*
+   COMPLETE LOGO
+
+   contain = show the entire image
+   rather than cutting the top or bottom.
 */
 
-.jd-profile-photo img {
+.jd-profile-photo > img {
     display: block !important;
 
     width: 100% !important;
     height: 100% !important;
 
-    max-width: 100% !important;
-    max-height: 100% !important;
-
-    border-radius: 50%;
-
-    object-fit: contain !important;
-
-    object-position: center center !important;
+    max-width: none !important;
+    max-height: none !important;
 
     margin: 0 !important;
     padding: 0 !important;
+
+    object-fit: contain !important;
+    object-position: center center !important;
+
+    border-radius: 50%;
+
+    flex-shrink: 0;
 }
 
 
@@ -135,7 +144,7 @@
     text-align: center;
 
     padding:
-        63px
+        72px
         20px
         7px;
 }
@@ -218,8 +227,7 @@
 .jd-social-grid {
     display: grid;
 
-    grid-template-columns:
-        repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 
     gap: 10px;
 
@@ -464,19 +472,34 @@
         object-fit: contain !important;
     }
 
-    /* Smaller but COMPLETE logo */
+
+    /* ================================================
+       MOBILE LOGO
+       Larger circle + complete logo
+    ================================================ */
 
     .jd-profile-photo {
-        width: 95px;
-        height: 95px;
+        width: 110px;
+        height: 110px;
 
-        bottom: -47px;
+        bottom: -55px;
 
-        padding: 3px;
+        padding: 2px;
+
+        overflow: visible !important;
     }
 
+    .jd-profile-photo > img {
+        width: 100% !important;
+        height: 100% !important;
+
+        object-fit: contain !important;
+        object-position: center center !important;
+    }
+
+
     .jd-profile-details {
-        padding-top: 57px;
+        padding-top: 66px;
         padding-left: 15px;
         padding-right: 15px;
         padding-bottom: 6px;
@@ -499,8 +522,7 @@
     }
 
     .jd-social-grid {
-        grid-template-columns:
-            repeat(4, 1fr);
+        grid-template-columns: repeat(4, 1fr);
 
         gap: 9px;
 
@@ -543,6 +565,7 @@
     .jd-info-icon {
         width: 35px;
         height: 35px;
+
         min-width: 35px;
 
         margin-right: 10px;
@@ -571,16 +594,18 @@
 @media (max-width: 380px) {
 
     .jd-profile-photo {
-        width: 90px;
-        height: 90px;
+        width: 100px;
+        height: 100px;
 
-        bottom: -45px;
+        bottom: -50px;
 
-        padding: 3px;
+        padding: 2px;
+
+        overflow: visible !important;
     }
 
     .jd-profile-details {
-        padding-top: 54px;
+        padding-top: 61px;
     }
 
     .jd-profile-name {
@@ -627,16 +652,18 @@
 @media (max-width: 330px) {
 
     .jd-profile-photo {
-        width: 84px;
-        height: 84px;
+        width: 92px;
+        height: 92px;
 
-        bottom: -42px;
+        bottom: -46px;
 
-        padding: 3px;
+        padding: 2px;
+
+        overflow: visible !important;
     }
 
     .jd-profile-details {
-        padding-top: 51px;
+        padding-top: 57px;
     }
 
     .jd-social-grid {
